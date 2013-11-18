@@ -1,7 +1,7 @@
-=== Orbis Keychains ===
+=== Orbis Finance ===
 Contributors: pronamic, remcotolsma
 Donate link: http://orbiswp.com/
-Tags: orbis, keychain, password, username, url, mangement
+Tags: orbis, finance, invoice, admin, administration, accountant
 Requires at least: 3.5
 Tested up to: 3.5.1
 Stable tag: 0.1
