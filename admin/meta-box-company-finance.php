@@ -8,6 +8,7 @@ wp_nonce_field( 'orbis_save_company_finance', 'orbis_company_finance_meta_box_no
 
 ?>
 <table class="form-table">
+	<tbody>
 		<tr>
 			<th scope="row">
 				<label for="orbis_company_ebilling"><?php _e( 'Electronic billing', 'orbis' ); ?></label>
