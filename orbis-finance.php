@@ -1,19 +1,19 @@
 <?php
 /*
 Plugin Name: Orbis Finance
-Plugin URI: http://orbiswp.com/
-Description: 
+Plugin URI: http://www.orbiswp.com/
+Description: The Orbis Finance plugin extends your Orbis environment with some finance features.
 
-Version: 0.1
+Version: 1.0.0
 Requires at least: 3.5
 
 Author: Pronamic
-Author URI: http://pronamic.eu/
+Author URI: http://www.pronamic.eu/
 
-Text Domain: orbis
+Text Domain: orbis_finance
 Domain Path: /languages/
 
-License: GPL
+License: Copyright (c) Pronamic
 
 GitHub URI: https://github.com/pronamic/wp-orbis-keychains
 */

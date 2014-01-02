@@ -6,7 +6,7 @@
 function orbis_company_finance_add_meta_boxes() {
 	add_meta_box(
 		'orbis_company_finance',
-		__( 'Company Finance', 'orbis' ),
+		__( 'Company Finance', 'orbis_finance' ),
 		'orbis_company_finance_meta_box',
 		'orbis_company' ,
 		'normal' ,
