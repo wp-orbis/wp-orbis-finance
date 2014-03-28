@@ -30,9 +30,3 @@ The Orbis Finance plugin extends your Orbis environment with some finance featur
 
 = 1.0.0 =
 *	Initial release.
-
-
-== Developers ==
-
-*	php ~/wp/svn/i18n-tools/makepot.php wp-plugin ~/wp/git/orbis-finance ~/wp/git/orbis-finance/languages/orbis_finance.pot
-
