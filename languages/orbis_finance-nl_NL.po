@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Orbis Finance\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/orbis-finance\n"
-"POT-Creation-Date: 2014-01-02 12:08:39+00:00\n"
-"PO-Revision-Date: 2014-01-02 13:09+0100\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis-finance\n"
+"POT-Creation-Date: 2014-03-28 20:07:47+00:00\n"
+"PO-Revision-Date: 2014-03-28 21:07+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x:2c,1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #: admin/meta-box-company-finance.php:14
 msgid "Electronic billing"
@@ -51,12 +51,15 @@ msgstr "Bedrijfsfinanciën"
 msgid "Project Finance"
 msgstr "Projectfinanciën"
 
+#: includes/project.php:108
+msgid "Invoice Number '%s' was registered on this project by %s."
+msgstr "Factuurnummer '%s' werd geregisteerd bij dit project door %s."
+
 #. Plugin Name of the plugin/theme
 msgid "Orbis Finance"
 msgstr "Orbis financiën"
 
 #. Plugin URI of the plugin/theme
-#, fuzzy
 msgid "http://www.orbiswp.com/"
 msgstr "http://www.orbiswp.com/"
 
