@@ -4,7 +4,7 @@ Plugin Name: Orbis Finance
 Plugin URI: http://www.orbiswp.com/
 Description: The Orbis Finance plugin extends your Orbis environment with some finance features.
 
-Version: 1.0.1
+Version: 1.0.2
 Requires at least: 3.5
 
 Author: Pronamic

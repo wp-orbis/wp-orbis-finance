@@ -50,11 +50,11 @@ function orbis_save_project_finance( $post_id, $post ) {
 	// OK
 	$definition = array();
 
-	$definition['_orbis_project_is_invoicable']   = FILTER_VALIDATE_BOOLEAN;
+	$definition['_orbis_project_is_invoicable']  = FILTER_VALIDATE_BOOLEAN;
+	$definition['_orbis_project_invoice_number'] = FILTER_SANITIZE_STRING;
 
 	if ( current_user_can( 'edit_orbis_project_administration' ) ) {
 		$definition['_orbis_project_is_invoiced']    = FILTER_VALIDATE_BOOLEAN;
-		$definition['_orbis_project_invoice_number'] = FILTER_SANITIZE_STRING;
 	}
 
 	$data = filter_input_array( INPUT_POST, $definition );

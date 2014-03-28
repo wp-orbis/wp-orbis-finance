@@ -4,7 +4,7 @@ Donate link: http://www.orbiswp.com/
 Tags: orbis, finance, invoice, admin, administration, accountant
 Requires at least: 3.5
 Tested up to: 3.8
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: Copyright (c) Pronamic
 License URI: http://www.pronamic.eu/copyright/
 
@@ -27,6 +27,9 @@ The Orbis Finance plugin extends your Orbis environment with some finance featur
 
 
 == Changelog ==
+
+= 1.0.2 =
+*	Tweak - Everyone has now access to the project invoice number field.
 
 = 1.0.1 =
 *	Tweak - Project invoice number modification are now logged with an Orbis system comment.

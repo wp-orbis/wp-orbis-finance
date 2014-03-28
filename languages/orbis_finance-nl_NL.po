@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis Finance\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis-finance\n"
-"POT-Creation-Date: 2014-03-28 20:07:47+00:00\n"
-"PO-Revision-Date: 2014-03-28 21:07+0100\n"
+"POT-Creation-Date: 2014-03-28 20:18:27+00:00\n"
+"PO-Revision-Date: 2014-03-28 21:18+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -39,7 +39,7 @@ msgstr "Gefactureerd"
 msgid "Project is invoiced"
 msgstr "Project is gefactureerd"
 
-#: admin/meta-box-project-finance.php:63
+#: admin/meta-box-project-finance.php:66
 msgid "Invoice Number"
 msgstr "Factuurnummer"
 
