@@ -57,18 +57,18 @@ if ( true ) {
 					</label>
 				</td>
 			</tr>
-			<tr valign="top">
-				<th scope="row">
-					<label for="orbis_project_invoice_number">
-						<?php _e( 'Invoice Number', 'orbis_finance' ); ?>
-					</label>
-				</th>
-				<td>
-					<input type="text" id="orbis_project_invoice_number" name="_orbis_project_invoice_number" value="<?php echo esc_attr( $invoice_number ); ?>" />
-				</td>
-			</tr>
 
 		<?php endif; ?>
 
+		<tr valign="top">
+			<th scope="row">
+				<label for="orbis_project_invoice_number">
+					<?php _e( 'Invoice Number', 'orbis_finance' ); ?>
+				</label>
+			</th>
+			<td>
+				<input type="text" id="orbis_project_invoice_number" name="_orbis_project_invoice_number" value="<?php echo esc_attr( $invoice_number ); ?>" />
+			</td>
+		</tr>
 	</tbody>
 </table>
