@@ -58,7 +58,12 @@ function orbis_save_project_finance( $post_id, $post ) {
 	}
 
 	$data = filter_input_array( INPUT_POST, $definition );
+	
+	// Invoice number
+	$invoice_number_old = get_post_meta( $post_id, '_orbis_project_invoice_number', true );
+	$invoice_number_new = $data['_orbis_project_invoice_number'] ;
 
+	// Data
 	foreach ( $data as $key => $value ) {
 		if ( empty( $value ) ) {
 			delete_post_meta( $post_id, $key);
@@ -66,6 +71,68 @@ function orbis_save_project_finance( $post_id, $post ) {
 			update_post_meta( $post_id, $key, $value );
 		}
 	}
+
+	// Action
+	if ( $post->post_status == 'publish' && $invoice_number_old != $invoice_number_new ) {
+		// @see https://github.com/woothemes/woocommerce/blob/v2.1.4/includes/class-wc-order.php#L1274
+		do_action( 'orbis_project_invoice_number_update', $post_id, $invoice_number_old, $invoice_number_new );
+	}
 }
 
 add_action( 'save_post', 'orbis_save_project_finance', 10, 2 );
+
+/**
+ * Project finished update
+ *
+ * @param int $post_id
+ */
+function orbis_project_invoice_number_update( $post_id, $invoice_number_old, $invoice_number_new ) {
+	// Date
+	update_post_meta( $post_id, '_orbis_project_invoice_number_modified', time() );
+
+	// Comment
+	$user = wp_get_current_user();
+
+	$text = $invoice_number_new;
+	
+	$invoice_link = orbis_get_invoice_link( $invoice_number_new );
+	if ( ! empty( $invoice_link ) ) {
+		$text = sprintf(
+			'<a href="%s">%s</a>',
+			esc_attr( $invoice_link ),
+			$invoice_number_new
+		);
+	}
+	
+	$comment_content = sprintf(
+		__( "Invoice Number '%s' was registered on this project by %s.", 'orbis_finance' ),
+		$text,
+		$user->display_name
+	);
+
+	$data = array(
+		'comment_post_ID' => $post_id,
+		'comment_content' => $comment_content,
+		'comment_author'  => 'Orbis',
+		'comment_type'    => 'orbis_comment',
+	);
+
+	$comment_id = wp_insert_comment( $data );
+}
+
+add_action( 'orbis_project_invoice_number_update', 'orbis_project_invoice_number_update', 10, 3 );
+
+/**
+ * Pre get posts
+ * @param WP_Query $query
+ */
+function orbis_finance_pre_get_posts( $query ) {
+	$orderby = $query->get( 'orderby' );
+	
+	if ( 'project_invoice_number_modified' == $orderby ) {
+		$query->set( 'orderby', 'meta_value_num' );
+		$query->set( 'meta_key', '_orbis_project_invoice_number_modified' );
+	}
+}
+
+add_action( 'pre_get_posts', 'orbis_finance_pre_get_posts' );

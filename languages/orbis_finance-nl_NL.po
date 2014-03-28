@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Orbis Finance\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/orbis-finance\n"
-"POT-Creation-Date: 2014-03-28 18:57:26+00:00\n"
-"PO-Revision-Date: 2014-03-28 19:57+0100\n"
+"POT-Creation-Date: 2014-03-28 19:49:41+00:00\n"
+"PO-Revision-Date: 2014-03-28 20:50+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -50,6 +50,10 @@ msgstr "Bedrijfsfinanciën"
 #: includes/project.php:9
 msgid "Project Finance"
 msgstr "Projectfinanciën"
+
+#: includes/project.php:108
+msgid "Invoice Number '%s' was registered on this project by %s."
+msgstr "Factuurnummer '%s' werd geregisteerd bij dit project door %s."
 
 #. Plugin Name of the plugin/theme
 msgid "Orbis Finance"
