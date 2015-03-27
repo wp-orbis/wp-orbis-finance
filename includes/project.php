@@ -8,8 +8,8 @@ function orbis_project_finance_add_meta_boxes() {
 		'orbis_project_finance',
 		__( 'Project Finance', 'orbis_finance' ),
 		'orbis_project_finance_meta_box',
-		'orbis_project' ,
-		'normal' ,
+		'orbis_project',
+		'normal',
 		'high'
 	);
 }
@@ -38,7 +38,8 @@ function orbis_save_project_finance( $post_id, $post ) {
 
 	// Verify nonce
 	$nonce = filter_input( INPUT_POST, 'orbis_project_finance_meta_box_nonce', FILTER_SANITIZE_STRING );
-	if( ! wp_verify_nonce( $nonce, 'orbis_save_project_finance' ) ) {
+
+	if ( ! wp_verify_nonce( $nonce, 'orbis_save_project_finance' ) ) {
 		return;
 	}
 
@@ -54,7 +55,7 @@ function orbis_save_project_finance( $post_id, $post ) {
 	$definition['_orbis_project_invoice_number'] = FILTER_SANITIZE_STRING;
 
 	if ( current_user_can( 'edit_orbis_project_administration' ) ) {
-		$definition['_orbis_project_is_invoiced']    = FILTER_VALIDATE_BOOLEAN;
+		$definition['_orbis_project_is_invoiced'] = FILTER_VALIDATE_BOOLEAN;
 	}
 
 	$data = filter_input_array( INPUT_POST, $definition );

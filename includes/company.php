@@ -9,7 +9,7 @@ function orbis_company_finance_add_meta_boxes() {
 		__( 'Company Finance', 'orbis_finance' ),
 		'orbis_company_finance_meta_box',
 		'orbis_company' ,
-		'normal' ,
+		'normal',
 		'high'
 	);
 }
@@ -38,7 +38,8 @@ function orbis_save_company_finance( $post_id, $post ) {
 
 	// Verify nonce
 	$nonce = filter_input( INPUT_POST, 'orbis_company_finance_meta_box_nonce', FILTER_SANITIZE_STRING );
-	if( ! wp_verify_nonce( $nonce, 'orbis_save_company_finance' ) ) {
+
+	if ( ! wp_verify_nonce( $nonce, 'orbis_save_company_finance' ) ) {
 		return;
 	}
 
@@ -52,7 +53,7 @@ function orbis_save_company_finance( $post_id, $post ) {
 		'_orbis_company_ebilling' => FILTER_VALIDATE_BOOLEAN,
 	);
 
-	$data = filter_input_array(INPUT_POST, $definition);
+	$data = filter_input_array( INPUT_POST, $definition );
 
 	foreach ( $data as $key => $value ) {
 		if ( empty( $value ) ) {
