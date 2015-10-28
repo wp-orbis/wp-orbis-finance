@@ -134,6 +134,11 @@ function orbis_finance_pre_get_posts( $query ) {
 		$query->set( 'orderby', 'meta_value_num' );
 		$query->set( 'meta_key', '_orbis_project_invoice_number_modified' );
 	}
+
+	if ( 'project_invoice_number' == $orderby ) {
+		$query->set( 'orderby', 'meta_value_num' );
+		$query->set( 'meta_key', '_orbis_project_invoice_number' );
+	}
 }
 
 add_action( 'pre_get_posts', 'orbis_finance_pre_get_posts' );
