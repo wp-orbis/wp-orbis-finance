@@ -139,6 +139,45 @@ function orbis_finance_pre_get_posts( $query ) {
 		$query->set( 'orderby', 'meta_value_num' );
 		$query->set( 'meta_key', '_orbis_project_invoice_number' );
 	}
+
+	$invoicable = $query->get( 'orbis_invoicable', null );
+
+	if ( null !== $invoicable ) {
+		$invoicable = filter_var( $invoicable, FILTER_VALIDATE_BOOLEAN );
+
+		$meta_query = array();
+
+		if ( $invoicable ) {
+			$meta_query[] = array(
+				'key'     => '_orbis_project_is_invoicable',
+				'value'   => '1',
+				'compare' => '=',
+			);
+		} else {
+			$meta_query['relation'] = 'OR';
+
+			$meta_query[] = array(
+				'key'     => '_orbis_project_is_invoicable',
+				'value'   => '1',
+				'compare' => '!=',
+			);
+
+			$meta_query[] = array(
+				'key'     => '_orbis_project_is_invoicable',
+				'compare' => 'NOT EXISTS',
+			);
+		}
+
+		$query->set( 'meta_query', $meta_query );
+	}
 }
 
 add_action( 'pre_get_posts', 'orbis_finance_pre_get_posts' );
+
+function orbis_finance_query_vars( $query_vars ) {
+	$query_vars[] = 'orbis_invoicable';
+
+	return $query_vars;
+}
+
+add_filter( 'query_vars', 'orbis_finance_query_vars' );
