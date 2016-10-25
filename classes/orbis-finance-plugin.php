@@ -7,7 +7,6 @@ class Orbis_Finance_Plugin extends Orbis_Plugin {
 		$this->set_name( 'orbis_finance' );
 		$this->set_db_version( '1.0.2' );
 
-		$this->plugin_include( 'includes/company.php' );
 		$this->plugin_include( 'includes/project.php' );
 	}
 
