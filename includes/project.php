@@ -1,33 +1,6 @@
 <?php
 
 /**
- * Add project meta boxes
- */
-function orbis_project_finance_add_meta_boxes() {
-	add_meta_box(
-		'orbis_project_finance',
-		__( 'Project Finance', 'orbis_finance' ),
-		'orbis_project_finance_meta_box',
-		'orbis_project',
-		'normal',
-		'high'
-	);
-}
-
-add_action( 'add_meta_boxes', 'orbis_project_finance_add_meta_boxes' );
-
-/**
- * Project finance meta box
- *
- * @param array $post
-*/
-function orbis_project_finance_meta_box( $post ) {
-	global $orbis_finance_plugin;
-
-	$orbis_finance_plugin->plugin_include( 'admin/meta-box-project-finance.php' );
-}
-
-/**
  * Save project details
  */
 function orbis_save_project_finance( $post_id, $post ) {
